@@ -1,4 +1,4 @@
-namespace Frontend.Models
+namespace Frontend.Shared.ViewModels
 {
     public class ErrorViewModel
     {
