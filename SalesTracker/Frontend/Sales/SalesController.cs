@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Frontend.Sales
+namespace Presentation.Sales
 {
     public class SalesController : Controller
     {

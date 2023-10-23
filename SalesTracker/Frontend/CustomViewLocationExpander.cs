@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc.Razor;
 
-namespace Frontend
+namespace Presentation
 {
     public class CustomViewLocationExpander : IViewLocationExpander
     {

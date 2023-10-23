@@ -1,8 +1,8 @@
-﻿using Frontend.Shared.ViewModels;
+﻿using Presentation.Shared.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace Frontend.Home
+namespace Presentation.Home
 {
     public class HomeController : Controller
     {

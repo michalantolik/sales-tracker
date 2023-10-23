@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Frontend.Employees
+namespace Presentation.Employees
 {
     public class EmployeesController : Controller
     {
