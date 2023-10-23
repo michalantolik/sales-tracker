@@ -26,17 +26,17 @@ namespace Application.Customers.Queries.GetCustomerList
                 Name = Name
             };
 
-            mocker.GetMock<IDatabaseService>()
+            this.mocker.GetMock<IDatabaseService>()
                 .Setup(p => p.Customers)
                 .ReturnsDbSet(new List<Customer> { customer });
 
-            query = mocker.CreateInstance<GetCustomersListQuery>();
+            this.query = this.mocker.CreateInstance<GetCustomersListQuery>();
         }
 
         [Test]
         public void TestExecuteShouldReturnListOfCustomers()
         {
-            var results = query.Execute();
+            var results = this.query.Execute();
 
             var result = results.Single();
 
