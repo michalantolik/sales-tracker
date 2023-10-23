@@ -1,6 +1,7 @@
 using Application.Customers.Queries.GetCustomerList;
 using Application.Employees.Queries.GetEmployeesList;
 using Application.Interfaces;
+using Application.Products.Queries.GetProductsList;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Persistence;
 using Presentation;
@@ -14,6 +15,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IDatabaseService, DatabaseService>();
 builder.Services.AddScoped<IGetCustomersListQuery, GetCustomersListQuery>();
 builder.Services.AddScoped<IGetEmployeesListQuery, GetEmployeesListQuery>();
+builder.Services.AddScoped<IGetProductsListQuery, GetProductsListQuery>();
 
 // Customize the default convention for how views are located
 builder.Services.Configure<RazorViewEngineOptions>(
