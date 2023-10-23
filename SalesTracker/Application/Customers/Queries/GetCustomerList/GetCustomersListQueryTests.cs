@@ -28,7 +28,7 @@ namespace Application.Customers.Queries.GetCustomerList
 
             this.mocker.GetMock<IDatabaseService>()
                 .Setup(p => p.Customers)
-                .ReturnsDbSet(new List<Customer> { customer });
+                .ReturnsDbSet(new List<Customer> { this.customer });
 
             this.query = this.mocker.CreateInstance<GetCustomersListQuery>();
         }
