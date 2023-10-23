@@ -1,4 +1,5 @@
 using Application.Customers.Queries.GetCustomerList;
+using Application.Employees.Queries.GetEmployeesList;
 using Application.Interfaces;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Persistence;
@@ -12,6 +13,7 @@ builder.Services.AddControllersWithViews();
 // Add application services to the container.
 builder.Services.AddSingleton<IDatabaseService, DatabaseService>();
 builder.Services.AddScoped<IGetCustomersListQuery, GetCustomersListQuery>();
+builder.Services.AddScoped<IGetEmployeesListQuery, GetEmployeesListQuery>();
 
 // Customize the default convention for how views are located
 builder.Services.Configure<RazorViewEngineOptions>(
