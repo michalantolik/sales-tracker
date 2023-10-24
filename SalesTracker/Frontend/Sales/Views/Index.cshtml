@@ -22,7 +22,7 @@
         @foreach (var sale in Model)
         {
             <tr>
-                <td>@sale.Id</td>
+                <td><a href="sales/@sale.Id">@sale.Id</a></td>
                 <td>@sale.Date.ToString("d")</td>
                 <td>@sale.CustomerName</td>
                 <td>@sale.EmployeeName</td>
