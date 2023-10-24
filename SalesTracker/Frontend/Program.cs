@@ -7,6 +7,7 @@ using Application.Sales.Commands.CreateSale.Factory;
 using Application.Sales.Queries.GetSaleDetail;
 using Application.Sales.Queries.GetSalesList;
 using Common.Dates;
+using Infrastructure.Inventory;
 using Infrastructure.Network;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Persistence;
@@ -29,6 +30,7 @@ builder.Services.AddScoped<ICreateSaleViewModelFactory, CreateSaleViewModelFacto
 builder.Services.AddScoped<ICreateSaleCommand, CreateSaleCommand>();
 builder.Services.AddScoped<ISaleFactory, SaleFactory>();
 builder.Services.AddScoped<IHttpClientWrapper, HttpClientWrapper>();
+builder.Services.AddScoped<IInventoryService, InventoryService>();
 builder.Services.AddScoped<IDateService, DateService>();
 
 // Customize the default convention for how views are located

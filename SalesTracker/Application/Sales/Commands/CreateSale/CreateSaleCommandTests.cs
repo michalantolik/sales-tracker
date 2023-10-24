@@ -110,5 +110,17 @@ namespace Application.Sales.Commands.CreateSale
                 .Verify(p => p.Save(),
                     Times.Once);
         }
+
+        [Test]
+        public void TestExecuteShouldNotifyInventoryThatSaleOccurred()
+        {
+            this.command.Execute(this.model);
+
+            this.mocker.GetMock<IInventoryService>()
+                .Verify(p => p.NotifySaleOccurred(
+                        ProductId,
+                        Quantity),
+                    Times.Once);
+        }
     }
 }

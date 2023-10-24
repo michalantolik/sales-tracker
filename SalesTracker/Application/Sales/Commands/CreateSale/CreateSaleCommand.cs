@@ -4,20 +4,22 @@ using Common.Dates;
 
 namespace Application.Sales.Commands.CreateSale
 {
-    public class CreateSaleCommand
-        : ICreateSaleCommand
+    public class CreateSaleCommand : ICreateSaleCommand
     {
         private readonly IDateService dateService;
         private readonly IDatabaseService database;
+        private readonly IInventoryService inventoryService;
         private readonly ISaleFactory factory;
 
         public CreateSaleCommand(
             IDateService dateService,
             IDatabaseService database,
+            IInventoryService inventoryService,
             ISaleFactory factory)
         {
             this.dateService = dateService;
             this.database = database;
+            this.inventoryService = inventoryService;
             this.factory = factory;
         }
 
@@ -46,6 +48,8 @@ namespace Application.Sales.Commands.CreateSale
             this.database.Sales.Add(sale);
 
             this.database.Save();
+
+            this.inventoryService.NotifySaleOccurred(product.Id, quantity);
         }
     }
 }
