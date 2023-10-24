@@ -4,6 +4,7 @@ using Application.Interfaces;
 using Application.Products.Queries.GetProductsList;
 using Application.Sales.Queries.GetSaleDetail;
 using Application.Sales.Queries.GetSalesList;
+using Infrastructure.Network;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Persistence;
 using Presentation;
@@ -20,6 +21,7 @@ builder.Services.AddScoped<IGetEmployeesListQuery, GetEmployeesListQuery>();
 builder.Services.AddScoped<IGetProductsListQuery, GetProductsListQuery>();
 builder.Services.AddScoped<IGetSalesListQuery, GetSalesListQuery>();
 builder.Services.AddScoped<IGetSaleDetailQuery, GetSaleDetailQuery>();
+builder.Services.AddScoped<IHttpClientWrapper, HttpClientWrapper>();
 
 // Customize the default convention for how views are located
 builder.Services.Configure<RazorViewEngineOptions>(
