@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Presentation.Customers
 {
+    [Route("customers")]
     public class CustomersController : Controller
     {
         private readonly IGetCustomersListQuery query;
@@ -12,6 +13,7 @@ namespace Presentation.Customers
             this.query = query;
         }
 
+        [Route("")]
         public IActionResult Index()
         {
             var customers = query.Execute();

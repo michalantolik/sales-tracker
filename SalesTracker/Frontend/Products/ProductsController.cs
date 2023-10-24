@@ -1,9 +1,9 @@
 ﻿using Application.Products.Queries.GetProductsList;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Presentation.Products
 {
+    [Route("products")]
     public class ProductsController : Controller
     {
         private readonly IGetProductsListQuery query;
@@ -13,6 +13,7 @@ namespace Presentation.Products
             this.query = query;
         }
 
+        [Route("")]
         public IActionResult Index()
         {
             var products = this.query.Execute();
